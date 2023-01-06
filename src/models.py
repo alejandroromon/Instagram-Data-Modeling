@@ -30,11 +30,11 @@ class Follower(Base):
     user_from_id = Column(Integer, ForeignKey('user.id'))
     user_to_id = Column(Integer, ForeignKey('user.id'))
 
-class Coment(Base):
-    __tablename__= 'coment'
+class Comment(Base):
+    __tablename__= 'comment'
     id = Column(Integer, primary_key=True)
     coment_text = Column(String(250), nullable=True, unique=False)
-    autor_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey('user.id'))
     post_id = Column(Integer, ForeignKey('post.id'))
 
 class Media(Base):
